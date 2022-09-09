@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "string.h": "c",
+        "ROUGH16.C": "cpp",
+        "ROUGH23.C": "cpp",
+        "stdio.h": "c",
+        "cmath": "cpp",
+        "array": "c",
+        "*.tcc": "c",
+        "deque": "c",
+        "string": "c",
+        "vector": "c",
+        "string_view": "c",
+        "iostream": "cpp",
+        "forward_list": "c"
+    }
+}

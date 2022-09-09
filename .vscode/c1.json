@@ -1,0 +1,11 @@
+{
+
+	"Print to console": {
+		"prefix": "sf",
+		"body": [
+			"scanf(%\"$1\",&$2);"
+		],
+		"description": "My scanf function"
+
+}
+}

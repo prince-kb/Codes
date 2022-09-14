@@ -21,26 +21,24 @@ void push(){
 }
 void pop(){
 if (front==-1 && rear==-1){
-    printf("CIRCULAR QUEUE OVERFLOW\n");
+    printf("CIRCULAR QUEUE UNDERFLOW\n");
     return;
 }
 if(front==rear){
+    printf("Popped element is %d\n",cqueue[front]);
     front=-1,rear=-1;
 }
-if (front==MAX-1)
-        front=0;
-else front++;
-}
-void peep(){
-if (front<=rear){
-    for (int i=MAX-1;i>rear;i--)
-    printf("#\n");
-    for(int i=rear;i>=front;i--)
-    printf("%d\n",cqueue[i]);
-    for(int i=front-1;i>0;i--)
-    printf("#\n");
+else if(front==MAX-1){
+    printf("Popped element is %d\n",cqueue[front]);
+    front=0;
 }
 else {
+    printf("Popped element is %d\n",cqueue[front]);
+front++;
+}
+}
+void peep(){
+if (front>rear){
     for (int i = front; i < MAX; i++)
         printf("%d\n",cqueue[i]);
     for(int i= 0;i<=rear;i++)
@@ -48,11 +46,19 @@ else {
     for(int i=rear+1;i<front;i++)
         printf("#\n");
 }
+else {
+    for (int i=MAX-1;i>rear;i--)
+    printf("#\n");
+    for(int i=rear;i>=front;i--)
+    printf("%d\n",cqueue[i]);
+    for(int i=front-1;i>=0;i--)
+    printf("#\n");
+}
 }
 int main(){
     while(TRUE){
     int a;
-    printf("\t CIRCULAR QUEUE MENU\n 1> PUSH 2> POP 3> PEEP 4> EXIT\n");
+    printf("\n\t CIRCULAR QUEUE MENU\n 1> PUSH 2> POP 3> PEEP 4> EXIT\n");
 printf("\nEnter your choice: ");
 scanf("%d",&a);
 switch(a){

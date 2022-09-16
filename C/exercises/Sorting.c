@@ -12,16 +12,30 @@ void pArray(int arr[],int n){
     printf("\n");
 }
 void bsort(int arr[],int b,int n){
-    for (int i = 0; i < n-1; i++){
-        for (int j = i+1; j < n; j++)
+    if (b==1){
+        for (int i = 0; i < n-1; i++){
+        for (int j = 0; j < n-i-1; j++)
         {
-            if(arr[i]<arr[j]){
-                int temp=arr[i];
-                arr[i]=arr[j];
+            if(arr[j+1]<arr[j]){
+                int temp=arr[j+1];
+                arr[j+1]=arr[j];
                 arr[j]=temp;
             }   
         }   
-    }    
+    }  
+    }
+    else {
+        for (int i = 0; i < n-1; i++){
+        for (int j = 0; j < n-i-1; j++)
+        {
+            if(arr[j+1]>arr[j]){
+                int temp=arr[j+1];
+                arr[j+1]=arr[j];
+                arr[j]=temp;
+            }   
+        }   
+    }  
+    }
 }
 void ssort(int arr[],int b,int n){
 
@@ -48,9 +62,9 @@ if (a<1 || a>3 || b<1 || b>2)
 }
 
 switch(a){
-    case 1: bsort(arr,n,b);break;
-    case 2: isort(arr,n,b);break;
-    case 3: ssort(arr,n,b);break;
+    case 1: bsort(arr,b,n);break;
+    case 2: isort(arr,b,n);break;
+    case 3: ssort(arr,b,n);break;
 }
     pArray(arr,n);
 

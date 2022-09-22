@@ -392,3 +392,46 @@ for (int i = 1; i <= a; i++){
 }
 
 } */
+//Pair sum
+/*
+#include<iostream>
+using namespace std;
+int main(){
+int a,key,arr[50];
+cout<< "Enter the number of elements of the array: ";
+cin>>a;
+for (int i = 0; i < a; i++)
+    cin>>arr[i];
+    cout<<"Enter the sum to find: ";
+    cin>>key;
+    cout<<"Elements are :";
+for (int i = 0; i < a; i++){
+    for (int j = i+1; j < a; j++){
+        if (arr[i]+arr[j]==key)
+            cout<<arr[i]<<" "<<arr[j]<<endl;
+    }
+}
+}
+*/
+//Triplet sum
+/* 
+#include<iostream>
+using namespace std;
+int main(){
+int a,key,arr[50];
+cout<< "Enter the number of elements of the array: ";
+cin>>a;
+for (int i = 0; i < a; i++)
+    cin>>arr[i];
+    cout<<"Enter the sum to find: ";
+    cin>>key;
+    cout<<"Elements are :";
+for (int i = 0; i < a; i++){
+    for (int j = i+1; j < a; j++){
+        for(int k=j+1;k<a;k++){
+        if (arr[i]+arr[j]+arr[k]==key)
+            cout<<arr[i]<<" "<<arr[j]<<" "<<arr[k]<<endl;
+    }
+    }
+}
+}   */

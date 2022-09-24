@@ -115,6 +115,7 @@ int main(){
     cin>>key;
     cout<<"Number of occurence is: "<<locc(arr,a,key)-focc(arr,a,key)+1<<endl;
 }  */
+/*
 #include<iostream>
 using namespace std;
 int peak(int arr[],int a){
@@ -135,3 +136,26 @@ int main(){
         cin>>arr[i];
     cout<<"Peak element is: "<<peak(arr,a)<<endl;
 }  
+*/
+#include<iostream>
+using namespace std;
+int pivot(int arr[],int a){
+    int s=0,e=a-1,m;
+    m=(s+e)/2;
+    while(s<e){
+        if(arr[m]>=arr[0]){
+        s=m+1;
+        }
+        else {e=m;}
+        m=(s+e)/2;
+    }
+    return s;
+}
+int main(){
+int a,arr[50];
+cout<< "Enter the number of elements of the array: ";
+cin>>a;
+for(int i=0;i<a;i++)
+cin>>arr[i];
+cout<<"Pivot element is :"<<pivot(arr,a);
+}

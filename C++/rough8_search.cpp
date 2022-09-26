@@ -115,6 +115,7 @@ int main(){
     cin>>key;
     cout<<"Number of occurence is: "<<locc(arr,a,key)-focc(arr,a,key)+1<<endl;
 }  */
+//Peak element
 /*
 #include<iostream>
 using namespace std;
@@ -134,16 +135,18 @@ int main(){
     cin>>a;
     for (int i = 0; i < a; i++)
         cin>>arr[i];
-    cout<<"Peak element is: "<<peak(arr,a)<<endl;
+    cout<<"Peak element is at : "<<peak(arr,a)<<endl;
 }  
 */
+//Pivot element
+/*
 #include<iostream>
 using namespace std;
 int pivot(int arr[],int a){
     int s=0,e=a-1,m;
     m=(s+e)/2;
     while(s<e){
-        if(arr[m]>=arr[0]){
+        if(arr[m]>arr[0]){
         s=m+1;
         }
         else {e=m;}
@@ -158,4 +161,72 @@ cin>>a;
 for(int i=0;i<a;i++)
 cin>>arr[i];
 cout<<"Pivot element is :"<<pivot(arr,a);
+}
+*/
+
+//Searching in a rotated array
+ /* 
+#include<iostream>
+using namespace std;
+int pivot(int arr[],int a){
+    int s=0,e=a-1,m;
+    m=(s+e)/2;
+    while(s<e){
+        if(arr[m]>arr[0]){
+        s=m+1;
+        }
+        else {e=m;}
+        m=(s+e)/2;
+    }
+    return s;
+}
+int bsearch(int arr[],int start,int a,int key){
+    int end=a-1,mid;
+    while(start <= end){
+         mid=(start+end)/2;
+        //mid=s+(e-s)/2;
+        if(arr[mid]==key){
+        return mid;
+        }
+        if(arr[mid]>key)
+        end=mid-1;
+        else start=mid+1;
+    }
+    return -1;
+}
+int main(){
+int a,key,arr[50];
+cout<< "Enter number of elements of array: " ;
+cin>>a;
+for(int i=0;i<a;i++)
+cin>>arr[i];
+int p;
+p=pivot(arr,a);
+cout<<"Index of pivot element is "<<p;
+cout<<"Enter the key to search: ";
+cin>>key;
+if(arr[p]>key && arr[a-1]<key){
+    bsearch(arr,p,a,key);
+}
+else bsearch(arr,0,p-1,key);
+} */
+//Square root
+#include<iostream>
+using namespace std;
+int main(){
+int n,ans;
+cout<< "Enter the number you want to find the square root of :" ;
+cin>>n;
+int s=0,e=n,m;
+long long int l;
+while(s<=e){
+    m=(e+s)/2;
+    if(l>n)
+    e=m-1;
+    else {
+        ans=m;
+        s=m+1;
+    }
+}
+printf("Answer=%d",ans);
 }

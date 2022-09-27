@@ -20,31 +20,62 @@ void selection_sort(int arr[],int a,bool ch){
                     swap(arr[i], arr[j]);
                 }}}}
 
-    void bubble_sort(int arr[],int a,bool ch){
-        if(ch == false){
-            bool sw = false;
-            for(int i=0;i<a-1;i++){
-                for(int j=0;j<a-1-i;j++){
-                    if(arr[j]<arr[j+1]){
-                        swap(arr[j],arr[j+1]);
-                        sw == true;
-                    }
-            }
-            if(sw==false)
-            break;
-            }}
-        else {
-            bool sw = false;
-            for(int i=0;i<a-1;i++){
-                for(int j=0;j<a-i-1;j++){
-                    if(arr[j]>arr[j+1]){
-                        swap(arr[j],arr[j+1]);
-                        sw = true;
-                    }}
-                    if (sw == false)
-                    break;
-                    }}}
+void bubble_sort(int arr[],int a,bool ch){
+    if(ch == false){
+        bool sw = false;
+        for(int i=0;i<a-1;i++){
+            for(int j=0;j<a-1-i;j++){
+                if(arr[j]<arr[j+1]){
+                    swap(arr[j],arr[j+1]);
+                    sw == true;
+                }
+        }
+        if(sw==false)
+        break;
+        }}
+    else {
+        bool sw = false;
+        for(int i=0;i<a-1;i++){
+            for(int j=0;j<a-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    swap(arr[j],arr[j+1]);
+                    sw = true;
+                }}
+                if (sw == false)
+                break;
+                }}}
 
+void insertion_sort(int arr[],int a,bool ch){
+        int i=1;
+    if(ch==false){
+        while(i<a){
+        int j=i-1;
+            int temp=arr[i];
+            while(j>=0){
+                if(temp>arr[j])
+                    arr[j+1]=arr[j];
+                else break;
+                j-=1;
+            }
+            arr[j+1]=temp;
+            i+=1;
+        }}
+    else {
+        while(i<a){
+        int j=i-1;
+            int temp=arr[i];
+            while(j>=0){
+                if(temp<arr[j])
+                    arr[j+1]=arr[j];
+                else break;
+                j--;
+            }
+            arr[j+1]=temp;
+            i++;
+            // printArray(arr,a);
+        }
+    }
+}
 int main(){
     int arr[50],a,b;
     bool ch=0;
@@ -54,7 +85,7 @@ int main(){
     cin>>arr[i];
     cout<<"\nThe entered array is :\n";
     printArray(arr,a);
-    cout<<"\n1> Selection sort 2> Bubble sort"<<endl;
+    cout<<"\n1> Selection sort 2> Bubble sort 3> Insertion sort"<<endl;
     cout<<"Enter your choice :";
     cin>>b;
     cout<<"0> Descending 1> Ascending"<<endl;
@@ -64,6 +95,8 @@ int main(){
         case 1: selection_sort(arr,a,ch);
         break;
         case 2: bubble_sort(arr,a,ch);
+        break;
+        case 3: insertion_sort(arr,a,ch);
         break;
         default : cout<<"Wrong input"<<endl;
     }

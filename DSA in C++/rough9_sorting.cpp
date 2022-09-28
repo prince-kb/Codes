@@ -12,8 +12,7 @@ void selection_sort(int arr[],int a,bool ch){
                 if (arr[j] > arr[i])
                     swap(arr[i], arr[j]);
                 }}}
-    else
-    {
+    else{
         for (int i = 0; i < a-1; i++){
             for (int j = i + 1; j < a-1; j++){
                 if (arr[j] < arr[i])
@@ -28,8 +27,7 @@ void bubble_sort(int arr[],int a,bool ch){
                 if(arr[j]<arr[j+1]){
                     swap(arr[j],arr[j+1]);
                     sw == true;
-                }
-        }
+                }}
         if(sw==false)
         break;
         }}
@@ -73,9 +71,8 @@ void insertion_sort(int arr[],int a,bool ch){
             arr[j+1]=temp;
             i++;
             // printArray(arr,a);
-        }
-    }
-}
+        }}}
+
 int main(){
     int arr[50],a,b;
     bool ch=0;

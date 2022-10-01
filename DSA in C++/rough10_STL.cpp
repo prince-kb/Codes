@@ -3,6 +3,9 @@
 #include<list>
 #include<stack>
 #include<queue>
+#include<map>
+#include<set>
+#include<algorithm>
 using namespace std;
 int main(){
 /* 
@@ -59,6 +62,7 @@ s.push("al");
 cout<<s.size(); */
 
 //QUEUE
+/* 
 queue <char> q;
 q.push('q');
 q.push('w');
@@ -67,6 +71,92 @@ cout<<q.front()<<" ";
 q.empty();
 q.pop();
 cout<<q.front();
+ */
 
+//Priority Queue
+/* 
+priority_queue<int> p;
+p.push(11);
+p.push(12);
+p.push(10);
+p.push(15);
+p.push(1);
+p.push(110);
+int n=p.size();
+for(int i=0;i<n;i++){
+cout<<p.top()<<" ";
+p.pop();
 
+}
+cout<<endl;
+//Non decreasing order arranged priority queue
+priority_queue<int,vector<int>,greater<int>> p1;
+p1.push(11);
+p1.push(12);
+p1.push(10);
+p1.push(15);
+p1.push(1);
+p1.push(110);
+n=p1.size();
+for(int i=0;i<n;i++){
+cout<<p1.top()<<" ";
+p1.pop();
+
+}
+//Copying one type of thing into another(here priority queue p is copied to p2)
+priority_queue<int> p2(p);
+cout<<endl;
+p2.push(11);
+p2.push(12);
+p2.push(10);
+p2.push(15);
+p2.push(1);
+p2.push(110);
+n=p2.size();
+for(int i=0;i<n;i++){
+cout<<p2.top()<<" ";
+p2.pop();
+}
+ */
+
+//MAP
+/* 
+map<int,string> m;
+m[1]="asdf";
+m[2]="qwer";
+m[4]="prin";
+m[8]="poiuiuyt";
+
+// for(auto i:m){
+//     cout<<i.first<<" "<<i.second<<endl;
+// }
+m[1]="fdsa";
+for(auto i:m){
+    cout<<i.first<<" "<<i.second<<" ";
+}
+cout<<m.count(8)<<endl;
+cout<<m.erase(8)<<endl;
+
+auto it =m.find(1);
+for(auto i = it;i!=m.end();i++)
+cout<<(*i).first<<" ";
+
+ */
+//SET
+/* 
+set<int>s;
+s.insert(23);
+s.insert(2);
+s.insert(232);
+s.insert(22);
+s.insert(202);
+for(int i:s)
+cout<<i<<endl;
+//Range cannot be given to erase function
+//Only one item can be deleted at once
+s.erase(s.find(232));
+cout<<endl;
+for(int i:s)
+cout<<i<<endl;
+ */
 }

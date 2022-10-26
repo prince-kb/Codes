@@ -14,7 +14,7 @@ void selection_sort(int arr[],int a,bool ch){
                 }}}
     else{
         for (int i = 0; i < a-1; i++){
-            for (int j = i + 1; j < a-1; j++){
+            for (int j = i + 1; j < a; j++){
                 if (arr[j] < arr[i])
                     swap(arr[i], arr[j]);
                 }}}}

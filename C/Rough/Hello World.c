@@ -1,7 +1,4 @@
 #include <stdio.h>
-
-int main()
-{
-    printf("Hello World\a\a\a\a");
-    return 0;
+int main() {
+    printf("Hello Chuhiya");
 }

@@ -39,7 +39,7 @@ printArray(a1,n);
 printf("Matrix 2-\n");
 printArray(a2,n);
 mmly(a1,a2,a3,n);
-printf("Matrix 3-\n");
+printf("Multiplied matrix is:\n");
 printArray(a3,n);
 return 0;
 }

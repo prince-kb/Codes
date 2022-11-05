@@ -12,6 +12,7 @@
         "vector": "c",
         "string_view": "c",
         "iostream": "cpp",
-        "forward_list": "c"
+        "forward_list": "c",
+        "tempCodeRunnerFile.C": "cpp"
     }
 }

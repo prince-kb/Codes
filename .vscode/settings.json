@@ -13,6 +13,7 @@
         "string_view": "c",
         "iostream": "cpp",
         "forward_list": "c",
-        "tempCodeRunnerFile.C": "cpp"
+        "tempCodeRunnerFile.C": "cpp",
+        "ostream": "cpp"
     }
 }

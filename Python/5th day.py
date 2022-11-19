@@ -14,7 +14,7 @@ print(max,min)
 l1=[[1,2],[3,4]]
 l2=[[5,6],[7,8]]
 l3=[[],[]]
-p=0
+
 for i in range(0,len(l1),1):
     for j in range(0,len(l2),1):
         for k in range(0,len(l2),1):

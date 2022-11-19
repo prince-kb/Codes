@@ -14,9 +14,12 @@ print(max,min)
 l1=[[1,2],[3,4]]
 l2=[[5,6],[7,8]]
 l3=[[],[]]
-for i in range(0,2,1):
-    for j in range(0,2,1):
-        print(l1[i][j])
-    #     # for k in range(0,2,1):
-    # print(" ")
+p=0
+for i in range(0,len(l1),1):
+    for j in range(0,len(l2),1):
+        for k in range(0,len(l2),1):
+            print("f")
+            p=p+l1[i][k]*l2[k][j]
+        l3[i][j]=p
+# print(l3)
 

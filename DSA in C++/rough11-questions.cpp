@@ -85,7 +85,7 @@ void pass(int arr[],int n,int a){
     int i;
     for(i=a;i<n-1;i++)
     arr[i]=arr[i+1];
-    cout<<a<<endl;
+    // cout<<a<<endl;
     arr[n-1]=0;
 }
 void zero(int arr[],int n){
@@ -94,17 +94,42 @@ void zero(int arr[],int n){
             pass(arr,n,i); 
             if(arr[i-1]==0 && i!=0)
             pass(arr,n,i-1);
-            print(arr,n);   
+            // print(arr,n);   
     }
 }
 
 int main(){
-    int arr[]={1,3,0,2,4,0,6,0,0,0,9};
-    int a=11;
+    int arr[]={1,3,0,2,4,0,0,8,0,9};
+    int a=10;
     print(arr,a);
     zero(arr,a);
-    // pass(arr,a,2);
+    cout<<"After changing:"<<endl;
     print(arr,a);
 
 }
  */
+
+//OR
+/* 
+#include<iostream>
+using namespace std;
+void print(int arr[],int n){
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+}
+void zero(int arr[],int n){
+    int j=0;
+for(int i=0;i<n;i++){
+    if(arr[i]!=0){
+        swap(arr[i],arr[j]);
+        j++;
+    }
+}}
+int main(){
+    int arr[]={1,0,0,0,4,2,55,6,0};
+    print(arr,9);
+    zero(arr,9);
+    print(arr,9);
+} */

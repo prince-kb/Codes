@@ -133,3 +133,29 @@ int main(){
     zero(arr,9);
     print(arr,9);
 } */
+
+//Rotate array
+#include<iostream>
+using namespace std;
+void print(int arr[],int n){
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+}
+void rotate(int arr[],int n,int k){
+    int arr1[20],j=0;
+    for(int i=0;i<k;i++){
+        arr[n-k+i]=arr1[j++];
+    }
+    print(arr1,k);
+    for(int i=0;i<n-k;i++)
+    arr[n-1-i]=arr[n-k-i];
+    print(arr,n);
+}
+int main(){
+    int arr[50]={2,4,5,1,11,3,56};
+    int n=7;
+    print(arr,n);
+    rotate(arr,n,3);
+}

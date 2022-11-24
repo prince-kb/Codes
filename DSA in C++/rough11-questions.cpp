@@ -1,8 +1,9 @@
+//Reversal of an array
+/* 
 #include<iostream>
 #include<vector>
 using namespace std;
 void print(vector <int> arr){
-    cout<<arr.size();
     cout<<endl;
     for(int i=0;i<arr.size();i++)
     cout<<arr[i]<<" ";
@@ -26,4 +27,84 @@ while(s<=e){
 }
 cout<<"After reversing"<<endl;
 print (arr);
+} */
+
+//Merge two sorted arrays //Not completed
+/* 
+#include<iostream>
+using namespace std;
+
+void print(int arr[],int n){
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+    }
+void pass(int arr[],int c,int b,int a){
+    for(int i=a;i>b;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[b]=c;
 }
+void merge(int a1[],int a,int a2[],int b){
+    int i=0,j=0;
+    while(i<a){
+        if(a1[i]<a2[j])
+            i++;
+
+        else pass(a1,a2[j++],i++,a);
+    }
+    if(j<b)
+        while(j<b){
+        a1[i++]=a2[j++];
+        }
+}
+int main(){
+    int arr1[]={1,2,4,7,0,0,0,0,0};
+    int arr2[]={3,5,6,9,10};
+    int a=9,b=5;
+    print(arr1,a);
+    print(arr2,b);
+    merge(arr1,a,arr2,b);
+    cout<<"After merging: "<<endl;
+    print(arr1,a);
+} */
+
+//Move Zeroes to right
+/* 
+#include<iostream>
+using namespace std;
+
+void print(int arr[],int n){
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+}
+void pass(int arr[],int n,int a){
+    int i;
+    for(i=a;i<n-1;i++)
+    arr[i]=arr[i+1];
+    cout<<a<<endl;
+    arr[n-1]=0;
+}
+void zero(int arr[],int n){
+    for (int i = 0; i < n; i++){
+        if (arr[i]==0)
+            pass(arr,n,i); 
+            if(arr[i-1]==0 && i!=0)
+            pass(arr,n,i-1);
+            print(arr,n);   
+    }
+}
+
+int main(){
+    int arr[]={1,3,0,2,4,0,6,0,0,0,9};
+    int a=11;
+    print(arr,a);
+    zero(arr,a);
+    // pass(arr,a,2);
+    print(arr,a);
+
+}
+ */

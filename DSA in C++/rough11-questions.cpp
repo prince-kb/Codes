@@ -271,6 +271,7 @@ int main(){
  */
 
 #include<iostream>
+#include<vector>
 using namespace std;
 void print(int arr[],int n){
     cout<<endl;
@@ -279,6 +280,44 @@ void print(int arr[],int n){
     cout<<endl;
 }
 
-void sum_of_array(int arr1[],int a1,int arr2[],int a2){
-    
+vector<int> sum_of_array(int arr1[],int a1,int arr2[],int a2,vector<int>&arr){
+    int i=a1-1,j=a2-1,carry=0;
+    while(i>=0 && j>=0){
+        int sum=arr1[i]+arr2[j]+carry;
+        carry=sum/10;
+        sum=sum%10;
+        // cout<<sum<<carry;
+        arr.push_back(sum);
+        i--,j--;
+    }
+    for(i;i>=0;i--){
+        int sum=arr1[i]+carry;
+        carry=sum/10;
+        sum=sum%10;
+        arr.push_back(sum);
+    }
+    for(j;j>=0;j--){
+        int sum=arr2[j]+carry;
+        carry=sum/10;
+        sum=sum%10;
+        arr.push_back(sum);
+    }
+    if(carry!=0)
+    arr.push_back(carry);
+    return arr;
+}
+
+void printv(vector<int>arr){
+    cout<<endl;
+    // cout<<arr.size();
+    for(int i=arr.size()-1;i>=0;i--)
+        cout<<arr[i];
+    cout<<endl;
+}
+int main(){
+    int arr1[]={1,3,5},arr2[]={1,8,3,6};
+    vector<int>arr;
+    int a1=3,a2=4;
+    sum_of_array(arr1,a1,arr2,a2,arr);
+    printv(arr);
 }

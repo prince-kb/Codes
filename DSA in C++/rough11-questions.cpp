@@ -135,6 +135,7 @@ int main(){
 } */
 
 //Rotate array
+/* 
 #include<iostream>
 using namespace std;
 void print(int arr[],int n){
@@ -146,16 +147,138 @@ void print(int arr[],int n){
 void rotate(int arr[],int n,int k){
     int arr1[20],j=0;
     for(int i=0;i<k;i++){
-        arr[n-k+i]=arr1[j++];
+        arr1[j++]=arr[n-k+i];
     }
-    print(arr1,k);
+    // print(arr1,k);
     for(int i=0;i<n-k;i++)
-    arr[n-1-i]=arr[n-k-i];
-    print(arr,n);
+    arr[n-1-i]=arr[n-k-i-1];
+    // print(arr,n);
+    j=0;
+    for (int i = 0; i < k; i++)
+        arr[i]=arr1[j++];
+    // print(arr,n);
+    
 }
 int main(){
-    int arr[50]={2,4,5,1,11,3,56};
+    int arr[50]={2,4,5,1,11,3,56},k;
+    cout<<"Enter k value for rotation: ";
+    cin>>k;
     int n=7;
     print(arr,n);
-    rotate(arr,n,3);
+    rotate(arr,n,k);
+    print(arr,n);
+} */
+
+//2nd process
+/* 
+#include<iostream>
+using namespace std;
+void print(int arr[],int n){
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+}
+void rotate(int arr[],int n,int k){
+    int temp[20];
+    for (int i = 0; i < n; i++)
+        temp[(i+k)%n]=arr[i];
+    // print(temp,n);
+    for(int i=0;i<n;i++)
+    arr[i]=temp[i];
+}
+
+int main(){
+    int arr[]={2,4,1,5,3,7,9,8},k;
+    int n=8;
+    cout<<"Enter k value for rotation: ";
+    cin>>k;
+    print(arr,n);
+    rotate(arr,n,k);
+    print(arr,n);
+}
+ */
+//Check if array is sorted and rotated
+/* 
+#include<iostream>
+using namespace std;
+void print(int arr[],int n){
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+}
+int rotate(int arr[],int temp[],int n,int k){
+    for (int i = 0; i < n; i++)
+        temp[(i+k)%n]=arr[i];
+    // print(temp,n);
+    int z=0;
+    for(int i=1;i<n;i++){
+        if(temp[i]<temp[i-1]){
+            z=1;
+            break;
+        }
+    }
+    return z;
+}
+
+int checksa(int arr[],int temp[],int n){
+    bool z;
+    int i,x;
+    for(i=1;i<n;i++){
+        // cout<<;
+        x=rotate(arr,temp,n,i);
+        if (x==0)
+            return i;
+         }
+        return 0;
+}
+int main(){
+    int arr[20]={6,7,8,9,11,2,3,4,5},temp[20],n;
+    n=9;
+    print(arr,n);
+    cout<<"Array is rotated about "<<checksa(arr,temp,n);
+    cout<<endl;
+}
+ */
+
+//2nd Process
+/* 
+#include<iostream>
+using namespace std;
+void print(int arr[],int n){
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+}
+int checksa(int arr[],int a){
+    int n;
+    for(int i=0;i<a-1;i++)
+    if(arr[i]>arr[i+1])
+    n+=1;
+    if(arr[a-1]>arr[0])
+    n+=1;
+    return n<=1;
+}
+
+int main(){
+    int arr[20]={6,7,8,9,11,3,4,5},temp[20],n;
+    n=8;
+    print(arr,n);
+    cout<<"Array is rotated-"<<checksa(arr,n);
+}
+ */
+
+#include<iostream>
+using namespace std;
+void print(int arr[],int n){
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+    cout<<endl;
+}
+
+void sum_of_array(int arr1[],int a1,int arr2[],int a2){
+    
 }

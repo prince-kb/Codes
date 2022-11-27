@@ -1,2 +1,2 @@
 
-    //     cout<<arr[a]<<a<<endl;
+        // print(temp,n);

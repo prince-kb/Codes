@@ -15,6 +15,10 @@
         "forward_list": "c",
         "tempCodeRunnerFile.C": "cpp",
         "ostream": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "chrono": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp"
     }
 }

@@ -54,6 +54,7 @@ cout<<palindrome_for_mixed(a,len);
  */
 
 //Reverse a sentence
+/* 
 #include<iostream>
 using namespace std;
 void reverse_string(string &b){
@@ -96,4 +97,40 @@ cout<<a<<endl;
 // cout<<a<<endl;
 cout<<"Reversed string is: "<<endl;
 cout<<reverse(a,c);
+}
+ */
+
+//Maximum occuring character in a string
+#include<iostream>
+using namespace std;
+void lower(string &a){
+    int i;
+    while(i<a.length()){
+    if(a[i]>='A' && a[i]<='Z')
+    a[i]=a[i]-'A'+'a';
+    i+=1;
+    }
+}
+int max(int arr[],int n){
+    int max=0;
+    for(int i=1;i<26;i++){
+        if(arr[i]>max)
+        max=i;
+    }
+    return max;
+}
+int main(){
+string a;
+cout<< "Enter the sentence( use only letters ): ";
+cin>>a;
+int arr[26]={};
+int i=0;
+lower(a);
+// cout<<a;
+while(i<a.length()){
+arr[int(a[i]-'a')]++;
+i+=1;
+}
+int m=max(arr,26);
+cout<<"Maximum occuring character is "<<char(m+'a')<<" that is "<<arr[m]<<" times"<<endl;
 }

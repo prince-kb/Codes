@@ -18,3 +18,4 @@ printf("%d\n",a+b);
 printf("%d\n",aalu(a,b));
 return 0;
 }
+

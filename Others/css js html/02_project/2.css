@@ -1,5 +1,5 @@
 *{
-    background-color: rgb(87, 226, 33);
+    /* background-color: rgb(87, 226, 33); */
     border: 0px;
     /* display: grid; */
 }
@@ -8,9 +8,8 @@
     text-align: center;
     height:10vh;
     width: 100%;
-    background: #000;
-    background-color: rgb(255, 255, 255);
-    content: center;
+    background-color: rgb(227, 177, 27);
+    /* content: center; */
     align-content: center;
     box-sizing: border-box;
     margin: 30px 10px 0px 10px;
@@ -18,20 +17,31 @@
     /* border: #000; */
     border-radius: 100px;
     padding: 10px 200px 10px 200px;
-    display: grid;
+    display: flex;
     border: 5px solid blue;
 }
-#button{
-    color: cyan;
-    height: 0px;
-    width: 0px;
+.button{
+    color: rgb(255, 255, 255);
+    height: auto;
+    width: auto;
     margin: auto;
     border: 10px;
     align-content: center;
     box-sizing: border-box;
     border-color: #000;
-    font-size: large;
+    font-size: 15px;
     font-weight: 1000;
     border: #000;
-    border: 5px solid blue;
+    border-radius: 10px;
+    border: 3px solid blue;
+    background-color: rgb(0, 0, 0);
+
+}
+#b1{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+#b3{
+    background: rgb(255, 255, 255);
+    color: black;
 }

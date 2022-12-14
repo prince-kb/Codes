@@ -1,47 +1,68 @@
-*{
-    /* background-color: rgb(87, 226, 33); */
-    border: 0px;
-    /* display: grid; */
-}
-#bg{
-    /* color: brown; */
-    text-align: center;
-    height:10vh;
-    width: 100%;
-    background-color: rgb(227, 177, 27);
-    /* content: center; */
-    align-content: center;
-    box-sizing: border-box;
-    margin: 30px 10px 0px 10px;
-    /* margin-inline-end:10px; */
-    /* border: #000; */
-    border-radius: 100px;
-    padding: 10px 200px 10px 200px;
-    display: flex;
-    border: 5px solid blue;
-}
-.button{
-    color: rgb(255, 255, 255);
-    height: auto;
-    width: auto;
-    margin: auto;
-    border: 10px;
-    align-content: center;
-    box-sizing: border-box;
-    border-color: #000;
-    font-size: 15px;
-    font-weight: 1000;
-    border: #000;
-    border-radius: 10px;
-    border: 3px solid blue;
-    background-color: rgb(0, 0, 0);
 
+/* box,heading,inp,field,button */
+#box{
+    font-size: 30px;
+    height: 600px;
+    width: 800px;
+    border: 10px;
+    border-radius: 20px;
+    background: rgb(238, 211, 211);
+    align-items: center;
+    display: flex;
 }
-#b1{
-    background: rgb(255, 255, 255);
-    color: black;
+.field{
+    margin: 30px 10px auto 10px;
+    border-bottom: 5px solid #000;
+    border-right: 5px solid #000;
+    height:70px;
+    width:90%;
+    border-radius: 10px;
+    font-size: 15px;
+    
 }
-#b3{
+#heading{
+    font-size: 77px;
+    color: rgb(97, 18, 18);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 350px;
+    width: 250px;
     background: rgb(255, 255, 255);
-    color: black;
+    margin: auto 50px auto 20px;
+    padding: auto 20px 10px 20px;
+    display: grid;
+    place-content: center;
+    /* box-sizing: border-box; */
+    /* border: 7px; */
+    border-style:solid;
+    /* border-left: -100px ; */
+    border-color: rgb(97, 18, 18);
+    border-left-width: 20px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    
+}
+#inp{
+    background: rgb(215, 139, 139);
+    height:350px;
+    width:100%;
+    display: grid;
+    place-content: center;
+    opacity: 1;
+    border-radius: 20px;
+    display:flex;
+    flex-direction: column;
+    margin: auto 10px auto 10px;
+}
+
+#button{
+    border-radius: 10px;
+    font-weight: 1000;
+    /* border: 200px; */
+    display: grid;
+    place-content: center;
+    background: rgb(238, 211, 211);
+    height: auto;
+    margin: 10px auto 10px 75px;
+    width:150px
 }

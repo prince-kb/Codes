@@ -1,0 +1,80 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+.wrapper{
+    height:200vh;
+    width:100%;
+    background: rgb(230, 201, 201);
+    display: grid;
+    /* This centers all immediiate child forcefully */
+    /* place-content: center; */
+    
+    /* justify works in x-axis */
+    justify-content: center;
+
+    /* align works in y-axis */
+    align-content: space-around;
+
+    /* item- does not merge items together
+    content- merges all elements and works it as a single */
+}
+.head{
+    height: 50px;
+    width: 80%;
+    background: #000;
+
+    /* Erases empty space also */
+    /* display: none; */
+    /* Only hides th element */
+    /* visibility: hidden; */
+   
+}
+
+/* absolute fixes a position to element
+fixed fixes a position to element and overlaps scrolling property */
+.stick{
+    height: 60px;
+    width: 70%;
+    background: rgb(232, 226, 226);
+    position: fixed;
+    /* Makes space for text only and no boundaries */
+    /* display: inline; */
+    /* padding: 20px; */
+}
+.median{
+    height: 250px;
+    width: 700px;
+    background: rgb(32, 205, 95);
+    display: flex;
+    top: 20px;
+    position: fixed;
+        /* justify works for x-axis and align works for z-axis */
+    /* This rotates items by 90 degree */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    /* flex-flow:  merges direction and wrapping property */
+    /* flex-wrap keeps elements in the same box and does not allow to overflow */
+
+}
+.foot{
+    height: 100px;
+    width: 100%;
+    background: rgb(100, 36, 219);
+
+    position: fixed;
+    bottom: 0%;
+
+    z-index: 50;
+    
+}
+.f{
+    height: 100px;
+    width: 60%;
+    background: rgb(255, 255, 255);
+}
+.median .box{
+    display: inline-block;
+
+}

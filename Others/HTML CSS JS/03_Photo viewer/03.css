@@ -1,0 +1,91 @@
+#prev{
+    /* height: 100vh;
+    width: 100%; */
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left:50%; 
+    
+}
+#n{
+    display: none;
+    /* background: #000; */
+    width: 100%;
+    margin: auto;
+    z-index: 10;
+}
+#text{
+    display: block;
+    font-weight: 600;
+    border: 3px solid black;
+    background-color: yellow;
+    border-radius:20% ;
+    align-items: center;
+    margin: 20px;
+    padding: 12px;
+}
+#text:hover{
+    font-weight: 1000;
+    border: 5px solid black;
+    background-color: rgb(2, 255, 10);
+}
+#image{
+    border: 5px solid rgb(213, 126, 126);
+    border-radius: 35%;
+    height:200px;
+    width:200px;
+    
+}
+/* #image:hover{
+    border: 8px solid red;
+    border-radius: 20%;
+    height:320px;
+    width:320px;
+
+} */
+#h2{
+    background: rgb(232, 232, 127);
+    border-radius:100% 100% 0% 0%;
+    width:100%;
+    display: flex;
+    place-content: center;
+    margin-bottom: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#h3{
+    background: rgb(232, 232, 127);
+    border-top: 0px;
+    border-radius:0% 0% 100% 100%;
+    width: 100%;
+    display: flex;
+    place-content: center;
+    margin-top: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#img{
+   margin-bottom: 0px; 
+    
+}
+#x{
+    margin-left: 20px;
+    border: 2px solid black;
+    border-radius:20% ;
+}
+#x:hover{
+    background-color: red;
+    font-size: large;
+    border: 3px solid black;
+    color: white;
+}
+#ne{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left:50%;  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+}

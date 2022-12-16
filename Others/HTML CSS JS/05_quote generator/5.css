@@ -1,0 +1,75 @@
+/* <body>
+    <div id="screen">
+        
+    </div>
+    <div id="bpanel">
+            <button id="next" class="but">NEXT</button>
+            <button id="prev" class="but">PREV</button>
+        </div>
+</body> */
+*{
+    background: rgb(101, 207, 113);
+    margin: 0px;
+    padding: 0px;
+}
+
+#screen{
+    height: 500px;
+    width: 600px;
+    background: rgb(210, 121, 233);
+    display: flex;
+    flex-wrap: wrap;
+    border: 7px solid rgb(0, 0, 0);
+    border-radius: 20%;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    font-family: 'Pacifico', cursive;
+    font-weight: 1000;
+    color: rgb(110, 4, 4);
+}
+body{
+    display: grid;
+    padding-top: 10%;
+    place-items: center;
+}
+
+.but{
+    background: #000;
+    border: 3px solid white;
+    width: 100%;
+    height: 30px;
+    
+}
+#prev,#next{
+    width: 150px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border: 3px solid rgb(114, 106, 232);
+    border-radius: 10px;
+    font: 500;
+    font-family: 'Pacifico', cursive;
+    margin: 10px 20px 0px 20px;
+    height: auto;
+    padding: 5px;
+}
+#prev:hover,#next:hover{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border: 3px solid rgb(255, 18, 2);
+    border-radius: 10px;
+    font: 500;
+    font-family: 'Pacifico', cursive;
+    margin: 10px 20px 0px 20px;
+    height: auto;
+    padding: 5px;
+}
+#bpanel{
+    padding: 10px;
+    display:inline-flex;
+    width: 400px;
+    align-content: center;
+
+}

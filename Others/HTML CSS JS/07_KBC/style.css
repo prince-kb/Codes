@@ -98,7 +98,7 @@ body{
 }
 
 #id{
-    /* display: none; */
+    visibility: visible;
     height: 40px;
     width: 200px;
     background: #000;

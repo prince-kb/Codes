@@ -75,17 +75,17 @@ body{
     background-color: rgba(221, 208, 27, 0.593);
 }
 #money{
-    display: none;
+    /* display: none; */
     text-align: center;
     border: 3px solid black;
     border-radius: 10%;
     height: 70px;
-    width: 600px;
+    width: 700px;
     /* margin-top: 5px;
     margin-bottom:5px;
     margin-left: 100px; */
     font-family: 'Sacramento','Pacific';
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 20px;
     margin-left: 125px;
 }
@@ -121,4 +121,24 @@ body{
     border-radius: 20px;
     font-size: 25px;
     font-family:'Cavolini';
+}
+#clic{
+    border: 0px solid rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+}
+#developer{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    font-family: "Sacramento","Cavolini";
+    font-size: 20px;
+    font-weight: 1000;
+    /* display: inline-block; */
+    
+}
+#developer:hover{
+    background: rgb(255, 255, 255);
+    color: rgb(43, 0, 255);
+    font-weight: 2000;
+    font-family: "Sacramento","Cavolini";
+    font-size: 20px;
 }

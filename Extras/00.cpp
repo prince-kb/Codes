@@ -41,6 +41,7 @@ int count(){
     return i;
 }
 
+//Displaying all the nodes arranged
 void display(){
     cout<<endl;
     if(count()==1){
@@ -76,23 +77,77 @@ void insert_end(){
     while(p->next!=NULL){
         p=p->next;
     }
-    q=(struct node*)malloc(sizeof(struct node));
-    cout<<"Enter the element: "<< endl;
+    q=(struct node *)malloc(sizeof(struct node));
+    cout<<"enter the element to insert: ";
     cin>>q->data;
     q->next=NULL;
     p->next=q;
     cout<<endl;
+}
 
+
+//Deleting las element of the linked list
+void delete_beginning(){
+    if(count()==1){
+        cout<<"Can't delete last element"<<endl;
+        return;
+    }
+    else {
+            struct node *p=start;
+    cout<<start->data<<" deleted"<<endl;
+    start=start->next;
+    free(p);
+    }
+}
+
+
+//Deleting last element of the linked list
+void delete_end(){
+        if(count()==1){
+        cout<<"Can't delete last element"<<endl;
+        return;
+    }
+        else {
+            struct node *p=start;
+            while(p->next->next != NULL)
+                p=p->next;
+                cout<<p->next->data<<" deleted"<<endl;
+                p->next = NULL;
+            free(p->next);
+        }
+
+}
+
+//Searching an element
+void search(){
+    int a,i=0;
+    struct node *p=start;
+    cout<<"Enter element to search: ";
+    cin>>a;
+    while(p!=NULL){
+        if(p->data==a){
+            break;
+        }
+            i++;
+        p=p->next;
+    }
+    if(p==NULL){
+        cout<<"Element not found"<<endl;
+        return;
+    }
+    else {
+            cout<<p->data<<" found at position "<<i<<endl;
+    }
 }
 
 
 int main(){
-int a,item,count,key;
+int a,item,key;
 create();
 while(TRUE){
     cout<<endl<<"LINKED LIST MENU"<<endl;
-    cout<<"1>Display 2>Insert from beginnning 3>Insert from last 4>Delete from beginning 5>Delete from last 6>Count 7>Exit"<<endl;
-    cout<<"enter your choice: ";
+    cout<<"1>Display 2>Insert from beginnning 3>Insert at last 4>Delete from beginning 5>Delete from last 6>Count 7>Search 8>Exit"<<endl;
+    cout<<"Enter your choice: ";
     cin>>a;
     switch(a){
         case 1: display();
@@ -100,11 +155,16 @@ while(TRUE){
         case 2: insert_beginning();
             break;
         case 3: insert_end();
-        // case 6: 
-        //     count();
-        //     cout<<"The count is "<<count()<<endl;
-        //     break;
-        case 7:exit(0);
+            break;
+        case 4: delete_beginning();
+            break;
+        case 5: delete_end();
+            break;
+        case 6: cout<<"The count is "<< count() <<endl;
+            break;
+        case 7: search();
+            break;
+        case 8:exit(0);
     }
 }
 

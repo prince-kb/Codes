@@ -1,4 +1,4 @@
-// ??Linked list
+// --Linked list--
 #include<iostream>
 using namespace std;
 struct node{
@@ -50,11 +50,11 @@ void display(){
     else{
         cout<<endl;
     struct node *p=start;
-    cout<<start->data;
+    cout<<"| "<<start->data<<" |";
     p=start->next;
     while(p!=NULL){
         
-        cout<<"-->"<<p->data<<" ";
+        cout<<"-->"<<"| "<<p->data<<" |";
         p=p->next;
     }
     }
@@ -85,6 +85,29 @@ void insert_end(){
     cout<<endl;
 }
 
+//Inserting element at specific position
+void insert_pos(){
+    int i=0,pos;
+    cout<<"Enter position index to insert node: ";
+        cin>>pos;
+    if(pos==0)
+        insert_beginning();
+    else if(pos==count()-1)
+        insert_end();
+    else{
+        struct node *p=start;
+        struct node*q=(struct node*)malloc(sizeof(struct node));
+        cout<<"Enter the element: "<< endl;
+        cin>>q->data;  
+        while(i<pos){
+            p=p->next;
+            i++;
+        }
+        p->next=q;
+        q->next=p->next->next;
+
+    }
+}
 
 //Deleting las element of the linked list
 void delete_beginning(){
@@ -118,6 +141,10 @@ void delete_end(){
 
 }
 
+//Deleting element at specific position
+void delete_pos(){
+
+}
 //Searching an element
 void search(){
     int a,i=0;
@@ -142,11 +169,11 @@ void search(){
 
 
 int main(){
-int a,item,key;
+int a;
 create();
 while(TRUE){
     cout<<endl<<"LINKED LIST MENU"<<endl;
-    cout<<"1>Display 2>Insert from beginnning 3>Insert at last 4>Delete from beginning 5>Delete from last 6>Count 7>Search 8>Exit"<<endl;
+    cout<<"1>Display 2>Insert from beginnning 3>Insert at last 4>Insert at position 5>Delete from beginning 6>Delete from last 7>Delete at position 8>Count 9>Search 10>Exit"<<endl;
     cout<<"Enter your choice: ";
     cin>>a;
     switch(a){
@@ -156,16 +183,74 @@ while(TRUE){
             break;
         case 3: insert_end();
             break;
-        case 4: delete_beginning();
+        case 4: insert_pos();
             break;
-        case 5: delete_end();
+        case 5: delete_beginning();
             break;
-        case 6: cout<<"The count is "<< count() <<endl;
+        case 6: delete_end();
             break;
-        case 7: search();
+        case 7: delete_pos();
             break;
-        case 8:exit(0);
+        case 8: cout<<"The count is "<< count() <<endl;
+            break;
+        case 9: search();
+            break;
+        case 10:exit(0);
     }
 }
 
 }
+
+
+//--DOUBLY LINKED LIST--
+/* 
+#include<iostream>
+using namespace std;
+# define TRUE 1
+struct node{
+    struct node *prev;
+    int data;
+    struct node * next;
+};
+struct node *start;
+void create(){
+    int i=0,a;
+    cout<<"Enter number of nodes to create:";
+    cin>>a;
+    cout<<"Enter 0 element: ";
+    cin>>start->data;
+    start->prev=NULL;
+    start->next=NULL;
+    if(i<a){
+        struct node *p;
+        start->next=p;
+        while(i<a){
+            p=(struct node *)malloc(sizeof(struct node));
+            p->prev=start;
+            cout<<"Enter "<<i<<" element: ";
+            cin>>p->data;
+            p->next=NULL;
+            
+            
+        }
+}
+}
+int main(){
+int a;
+create();
+
+while(TRUE){
+    cout<< "LINKED LIST MENU" << endl;
+cout<< "1>Display 2>Insert at beginning 3>Insert at end 4>Delete at beginning 5>Delete at end 6>Count 7>Search 8>Exit" << endl;
+cin>>a;
+switch(a){
+    case 1: display();
+        break;
+    case 2: insert_beginning();
+        break;
+    case 8: exit(0);
+}
+
+}
+} 
+*/

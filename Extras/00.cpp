@@ -1,5 +1,5 @@
 // --Linked list--
-#include<iostream>
+/* #include<iostream>
 using namespace std;
 struct node{
     int data;
@@ -14,13 +14,13 @@ void create(){
 cout<<"Enter the number of elements of the list: ";
 cin>>a;
 struct node*p=(struct node*)malloc(sizeof(struct node));
-cout<<"Enter the "<<i<<" element of the node: "<< endl;
+cout<<"Enter the "<<i<<" element of the node: ";
 cin>>p->data;
 p->next=NULL;
 start=p;
 i++;
 while(i<a){
-cout<<"Enter the "<<i<<" element of the node: "<< endl;
+cout<<"Enter the "<<i<<" element of the node: ";
 p->next=(struct node *)malloc(sizeof(struct node));
 p=p->next;
 cin>>p->data;
@@ -87,9 +87,14 @@ void insert_end(){
 
 //Inserting element at specific position
 void insert_pos(){
-    int i=0,pos;
+    int i=1,pos;
     cout<<"Enter position index to insert node: ";
         cin>>pos;
+        if(pos<0 || pos>count()){
+            cout<<"Invalid position"<<endl;
+            return;
+        }
+        
     if(pos==0)
         insert_beginning();
     else if(pos==count()-1)
@@ -103,13 +108,13 @@ void insert_pos(){
             p=p->next;
             i++;
         }
+        q->next=p->next;
         p->next=q;
-        q->next=p->next->next;
 
     }
 }
 
-//Deleting las element of the linked list
+//Deleting first element of the linked list
 void delete_beginning(){
     if(count()==1){
         cout<<"Can't delete last element"<<endl;
@@ -143,7 +148,26 @@ void delete_end(){
 
 //Deleting element at specific position
 void delete_pos(){
-
+    int i=1,pos;
+    cout<<"Enter position index to delete node: ";
+    cin>>pos;
+    if(pos<0 || pos>count()){
+        cout<<"Invalid position"<<endl;
+        return;
+    }
+    if(pos==0)
+        delete_beginning();
+    else if(pos==count()-1)
+        delete_end();
+    else{
+        struct node *p=start;
+        while(i<pos)
+            p=p->next,i++;
+        struct node *q=p->next;
+        cout<<q->data<<" deleted"<<endl;
+        p->next=q->next;
+        free(q);
+    }
 }
 //Searching an element
 void search(){
@@ -177,6 +201,8 @@ while(TRUE){
     cout<<"Enter your choice: ";
     cin>>a;
     switch(a){
+        default: cout<<"Wrong input"<< "--TRY AGAIN--";
+            break;
         case 1: display();
             break;
         case 2: insert_beginning();
@@ -200,7 +226,7 @@ while(TRUE){
 }
 
 }
-
+ */
 
 //--DOUBLY LINKED LIST--
 /* 
@@ -254,3 +280,78 @@ switch(a){
 }
 } 
 */
+
+//--STACK--
+#include<iostream>
+using namespace std;
+#define TRUE 1
+#define MAX 5
+int arr[20],front=-1,rear=-1;
+
+void push(){
+    if(rear==MAX-1){
+        cout<<"STACK OVERFLOW"<<endl;
+        return;
+    }
+    if(front==-1 && rear==-1)
+        front=0,rear=0;
+    else rear++;
+    cout<<"Enter the element to push:";
+    cin>>arr[rear];
+
+}
+
+void pop(){
+    if(rear==-1){
+        cout<<"STACK UNDERFLOW"<<endl;
+        return;
+    }
+    cout<<arr[rear]<<" popped"<<endl;
+    if(rear==0){
+        rear=-1,front=-1;
+    }
+    else rear--;
+}
+
+void peep(){
+    if(rear==-1){
+        cout<<"NO ITEMS PRESENT"<<endl;
+        return;
+    }
+    for(int i=MAX-1;i>rear;i--)
+    cout<<"--"<<endl;
+    for(int i=rear;i>=front;i--)
+    cout<<arr[i]<<endl;
+}
+int main(){
+int a;
+
+while(TRUE){
+cout<<endl<< "--STACK MENU--" << endl;
+cout<<"1>PUSH 2>POP 3> PEEP 4>EXIT"<<endl;
+cout<<"Enter your choice: ";
+cin>>a;
+switch (a)
+{
+case 1:
+    push();
+    break;
+
+case 2:
+    pop();
+    break;
+
+case 3:
+    peep();
+    break;
+
+case 4:
+    exit(0);
+
+default:
+    cout<<"Wrong Choice"<<endl<<"TRY AGAIN"<<endl;
+    break;
+}
+}
+
+}

@@ -282,6 +282,7 @@ switch(a){
 */
 
 //--STACK--
+/* 
 #include<iostream>
 using namespace std;
 #define TRUE 1
@@ -346,6 +347,147 @@ case 3:
     break;
 
 case 4:
+    exit(0);
+
+default:
+    cout<<"Wrong Choice"<<endl<<"TRY AGAIN"<<endl;
+    break;
+}
+}
+
+} */
+
+//--STACK USING LINKED LIST--
+#include<iostream>
+using namespace std;
+#define TRUE 1
+#define MAX 5
+struct node {
+    int data;
+    struct node *next;
+};
+int top=-1;
+struct node *start;
+
+
+int to(){
+    return top;
+}
+
+void insert_beginning(){
+start=(struct node*)malloc(sizeof(struct node));
+cout<<"Enter the element: "<< endl;
+cin>>start->data;
+start->next=NULL;
+cout<<endl;
+}
+
+void pop(){
+    if(top==-1){
+        cout<<"STACK UNDERFLOW"<<endl;
+        return;
+    }
+    else if(top == 0){
+        cout<<start->data<<" deleted"<<endl;
+        top--;
+        free(start);
+    }
+    else {
+        top--;
+        struct node *p=start;
+        while(p->next->next != NULL)
+            p=p->next;
+            cout<<p->next->data<<" deleted"<<endl;
+            p->next = NULL;
+        free(p->next);
+    }
+    cout<<endl;
+}
+void push(){
+    if(top==MAX-1){
+        cout<<"STACK OVERFLOW"<<endl;
+        return;
+    }
+    
+    else if(top==-1){
+        top++;
+        insert_beginning();
+        return;
+    }
+
+    else if(top==0){   
+        top++; 
+        struct node *p;
+        p=(struct node *)malloc(sizeof(struct node));
+        p->next=NULL;
+    cout<<"Enter the element to insert: ";
+    cin>>p->data;
+    start->next=p;
+    }
+
+    else {
+        top++;
+    struct node *p=start,*q;
+    while(p->next!=NULL){
+        p=p->next;
+    }
+    q=(struct node *)malloc(sizeof(struct node));
+    cout<<"Enter the element to insert: ";
+    cin>>q->data;
+    q->next=NULL;
+    p->next=q;
+}
+    cout<<endl;
+
+}
+void peep(){
+    cout<<endl;
+    if(top==-1){
+        cout<<"NO ELEMENTS PRESENT"<<endl;
+        return;
+    }
+    if(top==0){
+     cout<<"| "<<start->data<<" |";  
+    }
+    else{
+        cout<<endl;
+        struct node *p=start;
+    for(int i=top;i> -1;i--){
+        int j=0;
+        p=start;
+    while(j<i){
+        p=p->next;
+        j++;
+    }
+    cout<<"| "<<p->data<<" |"<<endl;
+    }
+    }
+cout<<endl;
+}
+int main(){
+int a;
+while(TRUE){
+    cout<<endl<< "STACK MENU" << endl;
+cout<<"1>PUSH 2>POP 3> PEEP 4>TOP 5>EXIT"<<endl;
+cout<<"Enter your choice: ";
+cin>>a;
+switch (a)
+{
+case 1:
+    push();
+    break;
+
+case 2:
+    pop();
+    break;
+
+case 3:
+    peep();
+    break;
+case 4:
+cout<<"The top is "<<to()<<endl;
+    break;
+case 5:
     exit(0);
 
 default:

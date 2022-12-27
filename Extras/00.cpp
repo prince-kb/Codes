@@ -358,6 +358,7 @@ default:
 } */
 
 //--STACK USING LINKED LIST--
+/* 
 #include<iostream>
 using namespace std;
 #define TRUE 1
@@ -497,3 +498,88 @@ default:
 }
 
 }
+ */
+
+//--QUEUE--
+#include<iostream>
+using namespace std;
+#define TRUE 1
+#define MAX 5
+int arr[MAX],front=-1,rear=-1;
+void push();
+void pop();
+void display();
+int main(){
+int a;
+while(TRUE){
+cout<<endl<< "QUEUE MENU" << endl;
+cout<< "1>ENQUEUE 2>DEQUEUE 3>DISPLAY 4>EXIT"  << endl;
+cout<<"Enter your choice: ";
+cin>>a;
+cout<<endl;
+switch (a){
+
+case 1:
+    push();
+    break;
+
+case 2:
+    pop();
+    break;
+
+case 3:
+    display();
+    break;
+
+case 4: 
+    exit(0);
+
+default: 
+    cout<<"Wrong choice"<<endl;
+    cout<<"  TRY AGAIN"<<endl;
+    break;
+}}}
+void push(){
+    if(rear==MAX-1){
+        cout<<"QUEUE OVERFLOW"<<endl;
+        return;
+    }
+    if(rear==-1)
+        front=0,rear=0;
+
+    else rear+=1;
+
+    cout<<"Enter the item: ";
+    cin>>arr[rear];
+
+    cout<<endl;
+    cout<<arr[rear]<<" enqueued"<<endl;
+}
+
+void pop(){
+    if(front==-1){
+    cout<<"QUEUE UNDERFLOW"<<endl;
+    return;
+    }
+    cout<<arr[front]<<" dequeued"<<endl;
+    if(front==rear)
+        front=-1,rear=-1;
+    else front++;
+}
+
+void display(){
+    // if(rear==-1){
+    //     for(int i=0;i<MAX;i++)
+    //     cout<<"--"<<endl;
+    // }
+    // else 
+    
+        for(int i=MAX-1;i>rear;i--)
+        cout<<"--"<<endl;
+    if(rear!=-1)
+        for(int i=rear;i>=front;i--)
+        cout<<arr[i]<<endl;
+        for(int i=front-1;i>=0;i--)
+        cout<<"--"<<endl;
+        
+    }

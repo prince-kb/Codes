@@ -1,4 +1,5 @@
-//Selection sort
+/* //Selection sort
+
 #include<iostream>
 using namespace std;
 void printArray(int arr[],int a){
@@ -60,5 +61,20 @@ printArray(arr,a);
 insertion_sort(arr,a);
 printArray(arr,a);
 
+
+} */
+
+#include<iostream>
+using namespace std;
+void func(int &a){
+    a++;
+}
+int main(){
+int a;
+cout<< "Enter a: ";
+cin>>a;
+cout<<a<<endl;
+func(a);
+cout<<a<<endl;
 
 }

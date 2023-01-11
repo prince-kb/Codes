@@ -88,7 +88,7 @@ void insert_pos(int loc,int item){
             i++;
         }
         struct node *q=(struct node*)malloc(sizeof(struct node));
-        q->data=item;q->next=p->next;q->prev=p;p->next=q;p->next->prev=q;
+        q->data=item;q->next=p->next;q->prev=p;p->next->prev=q;p->next=q;
         printf("%d inserted at %d position\n",item,loc);
     }
 }
@@ -115,6 +115,7 @@ void delete_head(){
     struct node *p=start;
     printf("%d deleted at starting position\n",p->data);
     start=start->next;
+    start->prev=NULL;
     free(p);
 }
 void delete_end(){
@@ -169,7 +170,7 @@ void reverse(){
     while(p->next!=NULL)
     p=p->next;
     q=p;p=start;
-    do{
+    while(TRUE){
         int temp;
         temp=p->data;
         p->data=q->data;
@@ -177,7 +178,7 @@ void reverse(){
         if (p==q->prev || p->next==q->prev)
             break;
         p=p->next;q=q->prev;
-    }while(TRUE);
+    }
 }
 int main(){
     create();
@@ -187,7 +188,7 @@ int main(){
     printf("1> INSERT MENU 2> DELETE MENU 3> DISPLAY FORWARD 4> DISPLAY BACKWARD 5>COUNT 6>SEARCH 7>REVERSE .... 10> EXIT\n");
     printf("Enter your choice: ");
     scanf("%d",&n);
-    printf("\n");
+    // printf("\n");
     switch(n){
         case 1: printf("\nINSERTION MENU\n");
         printf("1> INSERT AT BEGINNING 2> INSERT AT END 3>INSERT AT POSITION\n");

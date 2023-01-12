@@ -38,7 +38,7 @@ void display(int a){
         printf("\n");
         return;
     }
-    else while(p->next!=NULL)
+    while(p->next!=NULL)
     p=p->next;
     printf("%d",p->data);
     p=p->prev;
@@ -129,7 +129,7 @@ void delete_end(){
 void delete_bet(int loc){
     struct node *p=start;
     int i=1;
-    if (loc>count()){
+    if (loc>count()|| loc<0){
         printf("Wrong Location\n");
         return;
     }
